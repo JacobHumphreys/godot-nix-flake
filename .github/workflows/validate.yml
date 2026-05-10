@@ -1,0 +1,42 @@
+name: Validate flake
+
+on:
+  pull_request:
+    paths:
+      - flake.nix
+      - flake.lock
+      - versions.json
+      - .github/workflows/validate.yml
+  push:
+    branches: [main]
+    paths:
+      - flake.nix
+      - flake.lock
+      - versions.json
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v27
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+
+      - name: nix flake check
+        run: nix flake check --no-build --all-systems
+
+      - name: Build default (latest stable, x86_64-linux)
+        run: nix build --print-out-paths .#default
+
+      - name: Build latest (newest release, x86_64-linux)
+        run: nix build --print-out-paths .#latest
+
+      - name: Build latest-mono (x86_64-linux)
+        run: nix build --print-out-paths .#latest-mono

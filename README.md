@@ -1,105 +1,133 @@
-# 🌀 Godot Dev Flake
+# Godot Nix Flake
 
-**Godot Engine development builds (Standard & Mono) packaged as a Nix flake.**  
-Run the latest Godot dev versions on Nix/NixOS — reproducible, sandboxed, and ready to use.
+**Every published Godot Engine release — Standard & Mono — packaged as a Nix flake.**
+
+Run any Godot version on Nix/NixOS with one command. Auto-updated daily from [`godotengine/godot-builds`](https://github.com/godotengine/godot-builds).
 
 ---
 
-## 🚀 Usage
+## About this fork
 
-### Run directly
-You can run Godot without installing it:
+This is a fork of [**redyf/godot-nix-flake**](https://github.com/redyf/godot-nix-flake), extended to:
+
+- Expose **every released Godot version** (stable, RC, beta, dev) instead of a single hand-pinned one.
+- Support both **Standard** and **Mono** flavors automatically.
+- Support both `x86_64-linux` and `aarch64-linux`.
+- Auto-track new releases via a daily GitHub Actions job that opens a PR when new versions ship.
+
+**Huge thanks to [@redyf](https://github.com/redyf)** for the original flake — the packaging logic (autoPatchelf wiring, .NET runtime setup, Mono variant handling) is built directly on their work.
+
+---
+
+## Usage
+
+### Run any version directly
 
 ```bash
-nix run github:redyf/godot-nix-flake
+# Latest stable (default)
+nix run github:AnteWall/godot-nix-flake
+
+# Latest stable, Mono
+nix run github:AnteWall/godot-nix-flake#default-mono
+
+# Newest release of any kind (incl. RC / beta / dev)
+nix run github:AnteWall/godot-nix-flake#latest
+nix run github:AnteWall/godot-nix-flake#latest-mono
+
+# A specific version (any tag from godot-builds)
+nix run github:AnteWall/godot-nix-flake#"4.5-stable"
+nix run github:AnteWall/godot-nix-flake#"4.5-stable-mono"
+nix run github:AnteWall/godot-nix-flake#"4.6.3-rc1"
+nix run github:AnteWall/godot-nix-flake#"4.6-dev3-mono"
 ```
 
-Or run the Mono version explicitly:
+> Quote the attribute name when it contains dots — your shell will otherwise treat them as path separators.
+
+### Build locally
 
 ```bash
-nix run github:redyf/godot-nix-flake#4_6-dev3-mono
-```
-
-Build manually
-
-If you prefer to build it locally and keep the binaries:
-
-```bash
-nix build .#4_6-dev3
-nix build .#4_6-dev3-mono
-```
-
-Then run from the result:
-
-```bash
+nix build github:AnteWall/godot-nix-flake#"4.6.3-rc1"
 ./result/bin/godot
+```
+
+For Mono builds the wrapper exposes `godot-mono`:
+
+```bash
+nix build github:AnteWall/godot-nix-flake#default-mono
 ./result/bin/godot-mono
 ```
 
-🧩 Features
-
-    ✅ Standard and Mono variants
-
-    🔒 Reproducible builds with Nix flakes
-
-    🧰 Bundled with all required runtime libraries and .NET SDK
-
-    🧱 Works on Wayland, X11, and NVIDIA setups
-
-    🐧 Runs perfectly on NixOS or any Nix-enabled Linux distribution
-
-## 📦 Available Versions
-
-| Package name      | Godot version | Type     | Status |
-|------------------|---------------|---------|--------|
-| 4_6-dev3         | 4.6 dev3      | Standard | ✅     |
-| 4_6-dev3-mono    | 4.6 dev3      | Mono     | ✅     |
-
-
-You can easily add more versions in the godotVersions section inside the flake.
-
-🔧 Example: Using Godot Mono with C#
+### List all available versions
 
 ```bash
-nix run github:redyf/godot-nix-flake#4_6-dev3-mono
+nix flake show github:AnteWall/godot-nix-flake
 ```
 
-The dotnet-sdk_8 and runtime are already bundled — no additional setup needed.
-You can immediately open or create C# Godot projects.
+…or browse [`versions.json`](./versions.json).
 
-🪄 Using in another flake
+---
 
-If you want to depend on this flake inside your own:
+## Aliases
 
-```nix
-inputs.godot-nix-flake.url = "github:redyf/godot-nix-flake";
-````
+| Attribute       | Resolves to                                  |
+|-----------------|----------------------------------------------|
+| `default`       | latest `*-stable` release, Standard          |
+| `default-mono`  | latest `*-stable` release, Mono              |
+| `latest`        | newest release of any kind, Standard         |
+| `latest-mono`   | newest release of any kind, Mono             |
+| `<tag>`         | exact upstream tag, Standard                 |
+| `<tag>-mono`    | exact upstream tag, Mono                     |
 
-Then expose it in your packages or devShell:
+`<tag>` is whatever appears in [`godot-builds` releases](https://github.com/godotengine/godot-builds/releases) — e.g. `4.5-stable`, `4.6.3-rc1`, `4.6-dev3`.
+
+---
+
+## Supported platforms
+
+- `x86_64-linux`
+- `aarch64-linux`
+
+For Mono builds, .NET SDK 8 and runtime are bundled — no host-side .NET required. `LD_LIBRARY_PATH`, `PATH`, and `DOTNET_ROOT` are wired up by the wrapper.
+
+---
+
+## Using in another flake
+
 ```nix
 {
-  packages.x86_64-linux.godot = inputs.godot-nix-flake.packages.x86_64-linux."4_6-dev3";
+  inputs.godot.url = "github:AnteWall/godot-nix-flake";
+
+  outputs = { self, nixpkgs, godot, ... }: {
+    # e.g. NixOS module / home-manager
+    environment.systemPackages = [
+      godot.packages.x86_64-linux.default          # latest stable
+      godot.packages.x86_64-linux."4.5-stable"     # pinned version
+    ];
+  };
 }
 ```
-Now you can run it with:
 
-```bash
-nix run .#default
-```
+---
 
-🧠 Notes
+## How auto-updates work
 
-    Uses Nixpkgs unstable for access to latest dependencies
+`.github/workflows/update-versions.yml` runs daily. It:
 
-    Automatically sets up PATH, DOTNET_ROOT, and LD_LIBRARY_PATH for the Mono build
+1. Fetches all releases from `godotengine/godot-builds` via the GitHub API.
+2. Reads each asset's `digest` (SHA256) directly from the API.
+3. Regenerates `versions.json`.
+4. Opens a PR (`chore/update-godot-versions`) **against this repository only**.
 
-    Fully sandboxed — no global installation needed
+---
 
-    Works even on systems without dotnet preinstalled
+## Acknowledgements
 
-💡 Contributing
+- [**redyf/godot-nix-flake**](https://github.com/redyf/godot-nix-flake) — the original flake this is forked from. Thank you!
+- [**Godot Engine**](https://godotengine.org) — the engine itself.
+- [**godotengine/godot-builds**](https://github.com/godotengine/godot-builds) — upstream release artifacts and digests.
 
-Pull requests and version updates are welcome!
-To add a new Godot version, simply edit the godotVersions attribute set in the flake and provide the new download sha256.
+---
 
-Licensed under the [MIT License](./LICENSE).
+## License
+
+[MIT](./LICENSE)
