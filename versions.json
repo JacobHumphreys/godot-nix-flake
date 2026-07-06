@@ -1,6 +1,6 @@
 {
-  "latest_stable": "4.6.2-stable",
-  "latest_any": "4.6.3-rc1",
+  "latest_stable": "4.7-stable",
+  "latest_any": "4.7.1-rc1",
   "releases": {
     "3.6.1-stable": {
       "published_at": "2025-06-25T12:17:27Z",
@@ -922,6 +922,58 @@
         }
       }
     },
+    "4.6.3-rc2": {
+      "published_at": "2026-05-16T17:13:49Z",
+      "prerelease": true,
+      "assets": {
+        "x86_64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.6.3-rc2/Godot_v4.6.3-rc2_linux.x86_64.zip",
+            "sha256": "sha256-Yz7P6CzRzgs1NcfjOdYh7VUriJpPfwSuCBpXnRGUncs="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.6.3-rc2/Godot_v4.6.3-rc2_mono_linux_x86_64.zip",
+            "sha256": "sha256-AFZmdZF1igo9rTHJvu3ZGFe6R9L5dlR+EsDZQTlAvKA="
+          }
+        },
+        "aarch64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.6.3-rc2/Godot_v4.6.3-rc2_linux.arm64.zip",
+            "sha256": "sha256-vrvecAEWAH2Jg0M37fr8tlbvq0YboBzT1aj87QjtrUk="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.6.3-rc2/Godot_v4.6.3-rc2_mono_linux_arm64.zip",
+            "sha256": "sha256-Jq8qXoPlfa6zLv+INSyVI6dcMytiNdmUJRFIMV6PF0o="
+          }
+        }
+      }
+    },
+    "4.6.3-stable": {
+      "published_at": "2026-05-20T18:55:46Z",
+      "prerelease": false,
+      "assets": {
+        "x86_64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_linux.x86_64.zip",
+            "sha256": "sha256-0LwhEwZeSBycLCssN9qk6L4/6eJ/CrmrC2CW6aN5B/M="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_mono_linux_x86_64.zip",
+            "sha256": "sha256-cCqKZ4UGAgP9Rjc634ZFhuzww3esaF1xB93max66Cp4="
+          }
+        },
+        "aarch64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_linux.arm64.zip",
+            "sha256": "sha256-kMcDgu7hVCkEv1B7m9xuYqIwrHP9IUvziHqeCk2Fru0="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_mono_linux_arm64.zip",
+            "sha256": "sha256-lw0v7LZtjP90V5A+KRysQpPiRo0kN121i3R6D4tsWOQ="
+          }
+        }
+      }
+    },
     "4.7-beta1": {
       "published_at": "2026-04-24T18:24:50Z",
       "prerelease": true,
@@ -944,6 +996,110 @@
           "mono": {
             "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-beta1/Godot_v4.7-beta1_mono_linux_arm64.zip",
             "sha256": "sha256-/OsdP9Wb/HHirr9q55vayOAzmFKRZsk8UZHWOV7sLEY="
+          }
+        }
+      }
+    },
+    "4.7-beta2": {
+      "published_at": "2026-05-11T20:28:23Z",
+      "prerelease": true,
+      "assets": {
+        "x86_64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-beta2/Godot_v4.7-beta2_linux.x86_64.zip",
+            "sha256": "sha256-8+f+9IBJoRp2aQN+RAcbb+NhW1B4tM+1+PyNjDnoLzs="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-beta2/Godot_v4.7-beta2_mono_linux_x86_64.zip",
+            "sha256": "sha256-6q8Gb//d6QkT7T0jteLPasmOwkYztkLmJ16TaySunJs="
+          }
+        },
+        "aarch64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-beta2/Godot_v4.7-beta2_linux.arm64.zip",
+            "sha256": "sha256-ohAN7f1TRVuc+bn7HP50puGkMEpYSjB2z32q+zXb9CY="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-beta2/Godot_v4.7-beta2_mono_linux_arm64.zip",
+            "sha256": "sha256-wkWtwgmQPaPz9IEIJLLvkS1DJJ1V/tx11DX05aTApMA="
+          }
+        }
+      }
+    },
+    "4.7-beta3": {
+      "published_at": "2026-05-21T20:00:54Z",
+      "prerelease": true,
+      "assets": {
+        "x86_64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-beta3/Godot_v4.7-beta3_linux.x86_64.zip",
+            "sha256": "sha256-QLwpv2jIuUEiJa+ksrHmVg9BsvyBRobEI3RFgKGKbck="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-beta3/Godot_v4.7-beta3_mono_linux_x86_64.zip",
+            "sha256": "sha256-ToF4RfbbYavz3ZwoqdnIOh2t1oZTB2RR3HiDMzO6OV8="
+          }
+        },
+        "aarch64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-beta3/Godot_v4.7-beta3_linux.arm64.zip",
+            "sha256": "sha256-hJDKc3RG2Ldo3Q/fvO8X3WVD0QHWobTd2n7UO5Gn/H0="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-beta3/Godot_v4.7-beta3_mono_linux_arm64.zip",
+            "sha256": "sha256-IvL4uo+SDw8mmqEJ6P7WfdBxweIl9+Yn9PQzW2ghJVE="
+          }
+        }
+      }
+    },
+    "4.7-beta4": {
+      "published_at": "2026-05-29T21:47:59Z",
+      "prerelease": true,
+      "assets": {
+        "x86_64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-beta4/Godot_v4.7-beta4_linux.x86_64.zip",
+            "sha256": "sha256-ryaCk0aOHE+jfwBp2h6AKMZOI9wJ3mpyGEH7kc1OF40="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-beta4/Godot_v4.7-beta4_mono_linux_x86_64.zip",
+            "sha256": "sha256-bw0qVA3M1PA2+nNv/OYK/34V+mlylhTCGieZyXJdqJE="
+          }
+        },
+        "aarch64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-beta4/Godot_v4.7-beta4_linux.arm64.zip",
+            "sha256": "sha256-oXxBwp11xTbHbD1JVxmNA6hgX6GYuX6+JTC0VSAZJZM="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-beta4/Godot_v4.7-beta4_mono_linux_arm64.zip",
+            "sha256": "sha256-MvFdmizVr0AHf/w19kcG0IKIqQcPKkBO3CgAOdyC2CI="
+          }
+        }
+      }
+    },
+    "4.7-beta5": {
+      "published_at": "2026-06-03T20:39:20Z",
+      "prerelease": true,
+      "assets": {
+        "x86_64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-beta5/Godot_v4.7-beta5_linux.x86_64.zip",
+            "sha256": "sha256-qVTc+QMgvWJyKcZWZS6WZBu+uY4ZCrNlPxhhfc/HWlg="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-beta5/Godot_v4.7-beta5_mono_linux_x86_64.zip",
+            "sha256": "sha256-vgqt5pHOUNwXklmUdKU2vbM0B/4WcM9TwT4vhywKyC8="
+          }
+        },
+        "aarch64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-beta5/Godot_v4.7-beta5_linux.arm64.zip",
+            "sha256": "sha256-r4LuYpBJ5hRCOSMggkqG3COjqyLnvxkfSJ/nXflzeck="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-beta5/Godot_v4.7-beta5_mono_linux_arm64.zip",
+            "sha256": "sha256-py84/jbfbRmfeSTO9aLuftEvPjmoA7d53eXvxBlA8HA="
           }
         }
       }
@@ -1074,6 +1230,136 @@
           "mono": {
             "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-dev5/Godot_v4.7-dev5_mono_linux_arm64.zip",
             "sha256": "sha256-P7hbKklmX7MI+01JK3u5gZTX0kTR07jQPzOv5C6uUsY="
+          }
+        }
+      }
+    },
+    "4.7-rc1": {
+      "published_at": "2026-06-08T18:38:04Z",
+      "prerelease": true,
+      "assets": {
+        "x86_64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-rc1/Godot_v4.7-rc1_linux.x86_64.zip",
+            "sha256": "sha256-8T56Ik2SXZS1o1U7z9ac9eTJO2fGsYVySDQGXRxpWUY="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-rc1/Godot_v4.7-rc1_mono_linux_x86_64.zip",
+            "sha256": "sha256-YI4noJEeQeFMEjVL8jbd49oKgH/iV9TDOhNRRbRy+Ec="
+          }
+        },
+        "aarch64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-rc1/Godot_v4.7-rc1_linux.arm64.zip",
+            "sha256": "sha256-tZFTTQI9ThPlxGRYDsZQ4YBekP48vP8qZYHbNzowePc="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-rc1/Godot_v4.7-rc1_mono_linux_arm64.zip",
+            "sha256": "sha256-1J/lmwkJDgVk2ZazWMGsM11UMphSf2MTgURwvRnq2ZA="
+          }
+        }
+      }
+    },
+    "4.7-rc2": {
+      "published_at": "2026-06-11T15:42:04Z",
+      "prerelease": true,
+      "assets": {
+        "x86_64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-rc2/Godot_v4.7-rc2_linux.x86_64.zip",
+            "sha256": "sha256-693qL7hFiZ/XAkIAfwn50BcwJEuV9YjmxrudCy9IsFg="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-rc2/Godot_v4.7-rc2_mono_linux_x86_64.zip",
+            "sha256": "sha256-BLSQxsaJ9z/8AGOs79g9YkzI0R2phmkGRhrKRKdEoYc="
+          }
+        },
+        "aarch64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-rc2/Godot_v4.7-rc2_linux.arm64.zip",
+            "sha256": "sha256-lmsNZCYvIwXMniFHp7JASOXwA+EoRgOMZToYjLsztH4="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-rc2/Godot_v4.7-rc2_mono_linux_arm64.zip",
+            "sha256": "sha256-LE8gR6tazd3hcZO1V4BuFyvsFtIuJ7VnTp35UBiACys="
+          }
+        }
+      }
+    },
+    "4.7-rc3": {
+      "published_at": "2026-06-15T18:16:20Z",
+      "prerelease": true,
+      "assets": {
+        "x86_64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-rc3/Godot_v4.7-rc3_linux.x86_64.zip",
+            "sha256": "sha256-F0ygXqkYn1J0sPP54lJgepNb/Oj/WTt1jX0RqjsEeeY="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-rc3/Godot_v4.7-rc3_mono_linux_x86_64.zip",
+            "sha256": "sha256-VIkQ7pP5K5fb6vTLVLBjLk4cNQ5Z81SU2Ahe8iFV0mo="
+          }
+        },
+        "aarch64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-rc3/Godot_v4.7-rc3_linux.arm64.zip",
+            "sha256": "sha256-BtWYJ1lG964RlH8rOJKuvG/Gm6t5qlGOwt/5QPYv1kM="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-rc3/Godot_v4.7-rc3_mono_linux_arm64.zip",
+            "sha256": "sha256-qzDWDMNcQQS0ngoOTEhpPYL9YhTKnZNiKaVYUSYKtZA="
+          }
+        }
+      }
+    },
+    "4.7-stable": {
+      "published_at": "2026-06-18T11:50:23Z",
+      "prerelease": false,
+      "assets": {
+        "x86_64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-stable/Godot_v4.7-stable_linux.x86_64.zip",
+            "sha256": "sha256-CxpsVMLGGcEuFp/pJB7dpLgQgLUZRRzsKYS/DSxstzw="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-stable/Godot_v4.7-stable_mono_linux_x86_64.zip",
+            "sha256": "sha256-aehVAB40sQjrgST/Hq6ERQJrKjCoO25jFPcFrpY9D+E="
+          }
+        },
+        "aarch64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-stable/Godot_v4.7-stable_linux.arm64.zip",
+            "sha256": "sha256-21qhJjU6GP1mSBjk8bnP/6p34y1MmvDqh+jwKKOVoe0="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7-stable/Godot_v4.7-stable_mono_linux_arm64.zip",
+            "sha256": "sha256-d4CaIrloHpiiauw3w3iX/xX7c4B5ihax0UAbE70ee4c="
+          }
+        }
+      }
+    },
+    "4.7.1-rc1": {
+      "published_at": "2026-07-01T16:16:45Z",
+      "prerelease": true,
+      "assets": {
+        "x86_64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7.1-rc1/Godot_v4.7.1-rc1_linux.x86_64.zip",
+            "sha256": "sha256-rWcV1IZv2+99hJsbBsZOkTy5P/EtwsMmD0xA8Blt78U="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7.1-rc1/Godot_v4.7.1-rc1_mono_linux_x86_64.zip",
+            "sha256": "sha256-0/PMKtqbKQc8TtKbi98f+F77Xh2PVa9KbAkdqhcSVao="
+          }
+        },
+        "aarch64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7.1-rc1/Godot_v4.7.1-rc1_linux.arm64.zip",
+            "sha256": "sha256-5oYwqm1l1IyA/oDk4bhX++Zju1a1rrZXV0DbGS5EDTY="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7.1-rc1/Godot_v4.7.1-rc1_mono_linux_arm64.zip",
+            "sha256": "sha256-Q0BNSJomOOUEf273LUycN1wcpoy+0jkAnNyKG6eoC8c="
           }
         }
       }
