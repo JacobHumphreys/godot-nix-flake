@@ -49,6 +49,8 @@ def guard_repo() -> None:
         info, _ = gh_get(f"https://api.github.com/repos/{repo}")
     except urllib.error.URLError as exc:
         sys.exit(f"Could not query repo metadata for {repo}: {exc}")
+    
+    owner = os.environ["GITHUB_REPOSITORY"].split("/")[0]  # "owner/repo => owner"
     if owner != "JacobHumphreys":
         parent = (info.get("parent") or {}).get("full_name", "<unknown>")
         sys.exit(
