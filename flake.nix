@@ -59,7 +59,7 @@
           stdenv.cc.cc.lib
           libxkbcommon
         ]
-        ++ pkgs.lib.optionals (mono dotnetPkgs);
+        ++ pkgs.lib.optionals mono dotnetPkgs;
     in
       pkgs.stdenv.mkDerivation {
         pname = "godot${suffix}";
