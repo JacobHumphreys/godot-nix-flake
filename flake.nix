@@ -34,7 +34,25 @@
       dotnetSdk = pkgs.dotnet-sdk_10;
       dotnetRuntime = pkgs.dotnet-runtime_10;
 
-      dotnetPkgs =  [
+      desktopItem = pkgs.makeDesktopItem {
+        name = "godot" + suffix;
+        desktopName = "Godot" + suffix;
+        exec = "godot" + suffix + " %f";
+        icon = "godot";
+        terminal = false;
+        categories = ["Development" "IDE"];
+        mimeTypes = [
+          "application/x-godot-project"
+        ];
+      };
+
+      icon = pkgs.fetchurl {
+        name = "icon.png";
+        hash = "sha256-zIgTMu5S3rT06a4TpSP8ffBqDC/TG7sX+vpZMfKrctY=";
+        url = "https://godotengine.org/assets/press/icon_color.png";
+      };
+
+      dotnetPkgs = [
         dotnetSdk
         dotnetRuntime
       ];
@@ -59,7 +77,11 @@
           stdenv.cc.cc.lib
           libxkbcommon
         ]
-        ++ (if mono then dotnetPkgs else []);
+        ++ (
+          if mono
+          then dotnetPkgs
+          else []
+        );
     in
       pkgs.stdenv.mkDerivation {
         pname = "godot${suffix}";
@@ -104,6 +126,14 @@
             --prefix LD_LIBRARY_PATH : "${pkgs.lib.makeLibraryPath runtimeLibs}" \
             ${pkgs.lib.optionalString mono ''--prefix PATH : "${pkgs.lib.makeBinPath [dotnetSdk]}"''} \
             ${pkgs.lib.optionalString mono ''--set DOTNET_ROOT "${dotnetSdk}"''}
+
+           mkdir -p $out/share/icons/hicolor/256x256/apps
+          cp ${icon} \
+            $out/share/icons/hicolor/256x256/apps/godot.png
+
+          mkdir -p $out/share/applications
+          cp ${desktopItem}/share/applications/* \
+            $out/share/applications/
         '';
 
         meta = {
