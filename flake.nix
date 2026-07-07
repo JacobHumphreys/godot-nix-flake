@@ -84,7 +84,7 @@
         );
     in
       pkgs.stdenv.mkDerivation {
-        pname = "godot${suffix}";
+        pname = "godot";
         inherit version;
 
         src = pkgs.fetchurl {
@@ -122,7 +122,7 @@
           fi
           chmod +x "$godot_bin"
 
-          makeWrapper "$godot_bin" $out/bin/godot${suffix} \
+          makeWrapper "$godot_bin" $out/bin/godot \
             --prefix LD_LIBRARY_PATH : "${pkgs.lib.makeLibraryPath runtimeLibs}" \
             ${pkgs.lib.optionalString mono ''--prefix PATH : "${pkgs.lib.makeBinPath [dotnetSdk]}"''} \
             ${pkgs.lib.optionalString mono ''--set DOTNET_ROOT "${dotnetSdk}"''}
