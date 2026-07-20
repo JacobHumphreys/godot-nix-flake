@@ -1,6 +1,6 @@
 {
-  "latest_stable": "4.7-stable",
-  "latest_any": "4.7.1-rc1",
+  "latest_stable": "4.7.1-stable",
+  "latest_any": "4.7.1-stable",
   "releases": {
     "3.6.1-stable": {
       "published_at": "2025-06-25T12:17:27Z",
@@ -1360,6 +1360,84 @@
           "mono": {
             "url": "https://github.com/godotengine/godot-builds/releases/download/4.7.1-rc1/Godot_v4.7.1-rc1_mono_linux_arm64.zip",
             "sha256": "sha256-Q0BNSJomOOUEf273LUycN1wcpoy+0jkAnNyKG6eoC8c="
+          }
+        }
+      }
+    },
+    "4.7.1-rc2": {
+      "published_at": "2026-07-09T14:16:53Z",
+      "prerelease": true,
+      "assets": {
+        "x86_64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7.1-rc2/Godot_v4.7.1-rc2_linux.x86_64.zip",
+            "sha256": "sha256-gYyB9psIAfU7w1+40+de1DszqyLgGx3DfOHW4qaFhLM="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7.1-rc2/Godot_v4.7.1-rc2_mono_linux_x86_64.zip",
+            "sha256": "sha256-hM7EyHs1oSohtF3kFDqNDqGH8J7oh9nnrfN0cvsjeWM="
+          }
+        },
+        "aarch64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7.1-rc2/Godot_v4.7.1-rc2_linux.arm64.zip",
+            "sha256": "sha256-inWMvi7bG7Ra7Fkj9R41uYacDdMqM9WUcC4C20Ca4Gc="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7.1-rc2/Godot_v4.7.1-rc2_mono_linux_arm64.zip",
+            "sha256": "sha256-XPv2OF7rtUThfLhUzBjcus5vIkoygzYjMnUO6j8rEYM="
+          }
+        }
+      }
+    },
+    "4.7.1-stable": {
+      "published_at": "2026-07-14T17:48:01Z",
+      "prerelease": false,
+      "assets": {
+        "x86_64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7.1-stable/Godot_v4.7.1-stable_linux.x86_64.zip",
+            "sha256": "sha256-x/8U/ShHLI1PGTBD3jAnjc9+UkGh3PdWawLiet2qM7o="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7.1-stable/Godot_v4.7.1-stable_mono_linux_x86_64.zip",
+            "sha256": "sha256-bKf/BFnxuAaQC+aDwbCDfGB6nBaDTFMNxoyBufw64fY="
+          }
+        },
+        "aarch64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7.1-stable/Godot_v4.7.1-stable_linux.arm64.zip",
+            "sha256": "sha256-j1Jxec1K5YtAL6Jl/oF9xQXltrFFdPMJ7+VxE75WKsE="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.7.1-stable/Godot_v4.7.1-stable_mono_linux_arm64.zip",
+            "sha256": "sha256-g1DO4rjErxc57KOzHciIXYYVjVFN52wBUvA/+9WOJc4="
+          }
+        }
+      }
+    },
+    "4.8-dev1": {
+      "published_at": "2026-07-06T14:36:43Z",
+      "prerelease": true,
+      "assets": {
+        "x86_64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.8-dev1/Godot_v4.8-dev1_linux.x86_64.zip",
+            "sha256": "sha256-0jdAGjWLErg9g/n8ijc5EvkvKeqAb1wxXgsFd5ef3JA="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.8-dev1/Godot_v4.8-dev1_mono_linux_x86_64.zip",
+            "sha256": "sha256-BZ9tQyEyXNTBly+bIjHpgdLUm2qYjMR+jR+3/U+T8Aw="
+          }
+        },
+        "aarch64-linux": {
+          "standard": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.8-dev1/Godot_v4.8-dev1_linux.arm64.zip",
+            "sha256": "sha256-Z2yFk+WOBqc6vD+gboy8poYG9WTe149Bjpojtpg/A60="
+          },
+          "mono": {
+            "url": "https://github.com/godotengine/godot-builds/releases/download/4.8-dev1/Godot_v4.8-dev1_mono_linux_arm64.zip",
+            "sha256": "sha256-TKJ4aBen15EwhBzaJ0luUkYFUsm4FYCSK3p9BIY46Fw="
           }
         }
       }
